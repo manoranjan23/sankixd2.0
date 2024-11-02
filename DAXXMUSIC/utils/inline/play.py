@@ -18,21 +18,37 @@ def stream_markup(_):
     )
     return buttons
 
+# stream_markup_timer function jo timer se related buttons banata hai
+def stream_markup_timer(_):
+    buttons = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(text=_["PAUSE_TIMER"], callback_data="pause_timer_callback"),
+                InlineKeyboardButton(text=_["RESUME_TIMER"], callback_data="resume_timer_callback"),
+            ],
+            [
+                InlineKeyboardButton(text=_["STOP_TIMER"], callback_data="stop_timer_callback"),
+                InlineKeyboardButton(text=_["RESTART_TIMER"], callback_data="restart_timer_callback"),
+            ],
+        ]
+    )
+    return buttons
+
 # Help panel ka function
 def help_pannel(_, START: Union[bool, int] = None):
-    first = [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close")]
+    first = [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")]
     second = [
         InlineKeyboardButton(
             text=_["BACK_PAGE"],
-            callback_data=f"mbot_cb",
+            callback_data="mbot_cb",
         ),
         InlineKeyboardButton(
             text=_["BACK_BUTTON"],
-            callback_data=f"settingsback_helper",
+            callback_data="settingsback_helper",
         ),
         InlineKeyboardButton(
             text=_["NEXT_PAGE"],
-            callback_data=f"mbot_cb",
+            callback_data="mbot_cb",
         ),
     ]
     mark = second if START else first
@@ -120,7 +136,7 @@ def help_back_markup(_):
             [
                 InlineKeyboardButton(
                     text=_["BACK_BUTTON"],
-                    callback_data=f"settings_back_helper",
+                    callback_data="settings_back_helper",
                 ),
             ]
         ]
