@@ -1,10 +1,24 @@
 from typing import Union
-
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-
 from DAXXMUSIC import app
 
+# stream_markup function jo play, pause, stop aur skip buttons banata hai
+def stream_markup(_):
+    buttons = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(text=_["PLAY_BUTTON"], callback_data="play_callback"),
+                InlineKeyboardButton(text=_["PAUSE_BUTTON"], callback_data="pause_callback"),
+            ],
+            [
+                InlineKeyboardButton(text=_["STOP_BUTTON"], callback_data="stop_callback"),
+                InlineKeyboardButton(text=_["SKIP_BUTTON"], callback_data="skip_callback"),
+            ],
+        ]
+    )
+    return buttons
 
+# Help panel ka function
 def help_pannel(_, START: Union[bool, int] = None):
     first = [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close")]
     second = [
@@ -99,7 +113,7 @@ def help_pannel(_, START: Union[bool, int] = None):
     )
     return upl
 
-
+# Help back ka function
 def help_back_markup(_):
     upl = InlineKeyboardMarkup(
         [
@@ -113,7 +127,7 @@ def help_back_markup(_):
     )
     return upl
 
-
+# Private help panel ka function
 def private_help_panel(_):
     buttons = [
         [
