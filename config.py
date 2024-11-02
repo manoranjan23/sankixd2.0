@@ -21,7 +21,7 @@ BOT_USERNAME = getenv("BOT_USERNAME" , "@SANKI_MUSIC_vc_BOT")
 BOT_NAME = getenv("BOT_NAME" , "SANKI XD")
 #get Your Assistant User name
 ASSUSERNAME = getenv("ASSUSERNAME" , "II_SANKI_ll")
-EVALOP = list(map(int, getenv("EVALOP", "6971100005 5350640981").split()))
+EVALOP = list(map(int, getenv("EVALOP", "7070591202").split()))
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI","mongodb+srv://Somu:Somu@somu.xbkiklu.mongodb.net/?retryWrites=true&w=majority&appName=Somu")
 # for fedban 
